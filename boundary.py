@@ -2,7 +2,7 @@ import numpy as np
 import copy
 
 
-def DirichletBC(x, A, F, bc=[(0,0), (1, 0)]):
+def DirichletHomBC(x, A, F, bc=[(0,0), (1, 0)]):
     """Apply the Dirichlet BC to the stiffness and load matrix and 
     return the new A, F"""
     n_bc = len(bc)
