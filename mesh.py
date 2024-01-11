@@ -10,4 +10,5 @@ def createMesh(n, omega=(0, 1)):
 def createRandMesh(n, omega=(0, 1)):
     """Return an array of n nodes that are 
     randomly spaced in the domain omega"""
-    return np.sort(np.random.uniform(low=omega[0], high=omega[1], size=(n,)))
+    x = np.random.uniform(low=omega[0], high=omega[1], size=(n-2,))
+    return np.sort(np.append(x, np.array(omega)))
