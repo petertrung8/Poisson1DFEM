@@ -38,8 +38,12 @@ Performs a convergence analysis to assess the accuracy of the solution.
 ![Error of the FEM solver compared with the exact solution](/figures/fem_error.png)
 2. Perform convergence analysis:
 * Run python **mesh_convergence.py** to analyze the convergence behavior for different mesh sizes.
+* Current mesh sizing evaluated are 10, 50, 100, 500, 1000 elements
 ![Mean differences in the quantity u of the different meshes](/figures/mesh_mu_diff.png)
 ![Maximum differences in the quantity u of the different meshes](/figures/mesh_max_diff.png)
+
+* With increasing elements, the differences between the discretization size decreases and converges to zero
+* Given the increasing computational time for more elements, from the graph, 100 elements may be a good compromise between accuracy and computational power
 # Dependencies
 
 Python 3.x
