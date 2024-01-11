@@ -34,11 +34,14 @@ Performs a convergence analysis to assess the accuracy of the solution.
 1. Solve the Poisson equation:
 * Run python **poissonFEMsolve.py** to solve the equation with the default parameters.
 * Customize parameters as needed within the script, mainly the variables `omega` (domain bounds), `d_bc` (Dirichlet BC), `f` (source function) and `n_e` (number of elements).
+  
 ![Solution of the FEM solver compared with the exact solution](/figures/fem_solution.png)
 ![Error of the FEM solver compared with the exact solution](/figures/fem_error.png)
+
 2. Perform convergence analysis:
 * Run python **mesh_convergence.py** to analyze the convergence behavior for different mesh sizes.
 * Current mesh sizing evaluated are 10, 50, 100, 500, 1000 elements
+  
 ![L2-error of the different meshes with exact solution](/figures/L2-error.png)
 
 * With increasing elements, the L2-norm error decreases and converges
