@@ -38,7 +38,7 @@ for i in range(s):
     
 plt.figure()
 plt.plot(x2, u_exact, '-')
-plt.plot(x2, u_fem, '--')
+plt.plot(x, U, '--o')
 plt.xlabel('x')
 plt.ylabel('u(x)')
 plt.title('Solid line: Exact solution, Dashed line: FE solution')
