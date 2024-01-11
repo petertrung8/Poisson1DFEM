@@ -39,11 +39,10 @@ Performs a convergence analysis to assess the accuracy of the solution.
 2. Perform convergence analysis:
 * Run python **mesh_convergence.py** to analyze the convergence behavior for different mesh sizes.
 * Current mesh sizing evaluated are 10, 50, 100, 500, 1000 elements
-![Mean differences in the quantity u of the different meshes](/figures/mesh_mu_diff.png)
-![Maximum differences in the quantity u of the different meshes](/figures/mesh_max_diff.png)
+![L2-error of the different meshes with exact solution](/figures/L2-error.png)
 
-* With increasing elements, the differences between the discretization size decreases and converges to zero
-* Given the increasing computational time for more elements, from the graph, 100 elements may be a good compromise between accuracy and computational power
+* With increasing elements, the L2-norm error decreases and converges
+* From the graph, 100 elements could be enough to model the solution accurately as it is the convergence point
 # Dependencies
 
 Python 3.x
