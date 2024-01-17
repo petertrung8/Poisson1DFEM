@@ -8,11 +8,11 @@ from utils import *
 
 # specify the domain and the force field f
 omega = (0, 1) # domain
-d_bc = [(0, 1), (1, 1)] # list of tuples of Dirichlet BC, each tuple is (location, value)
+u_omega = (1, 1) # Dirichlet BC values, (left bc, right bc)
 f = lambda x: x * ( x + 3 ) * np.exp ( x ) # the source function
 
 # specifying the number of elements to discretize the domain
-n_e = 5
+n_e = 10
 n_n = n_e + 1
 x = createMesh(n_n, omega=omega)
 
@@ -21,7 +21,7 @@ A = stiffnessAssembly(x)
 F = loadAssembly(x, f)
 
 # apply the Dirichlet boundary conditions
-A_bc, F_bc = DirichletBC(x, A, F, d_bc)
+A_bc, F_bc = DirichletBC(x, A, F, omega, u_omega)
 
 # solve the linear system of equations
 A_bc = sp.csr_matrix(A_bc) # casting the matrix into csr matrix to make it faster
