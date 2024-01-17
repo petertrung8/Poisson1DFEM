@@ -7,8 +7,6 @@ def loadAssembly(x, f):
     for the 1D mesh x and force f""" 
     N = x.shape[0]
     F = np.zeros((N, 1))
-    F[0] = intHat1(x[0], x[1], f)
-    F[-1] = intHat1(x[-2], x[-1], f)
     
     for i in range( N-1):
         F[i] = F[i] + intHat2(x[i], x[i+1], f)
@@ -24,8 +22,6 @@ def stiffnessAssembly(x):
     
     # initiate a sparse A matrix and the first and last element of the diagonal
     A = sp.lil_matrix((N, N), dtype=np.float64)
-    A[0, 0] = 1/h[0]
-    A[-1, -1] = 1/h[-1]
     
     # loop through the diagonal to 
     for i in range(N-1):
